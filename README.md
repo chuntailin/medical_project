@@ -67,6 +67,24 @@ Anchor使用(8, 16, 32, 64, 128)
 
 dice = 0.2937081228783093
 
+# version 8
+新的training dataset (liver mask)
+Configure在train_medical中有記錄
+Train 0~115 ｜Val 116~125 ｜ Test 126~130
+使用scale, fliplr, flipud, rotation
+Anchor使用(8, 16, 32, 64, 128)
+
+dice = 0.5413352897560811
+
+# version 9
+新的training dataset (liver mask crop)
+Configure在train_medical中有記錄
+Train 0~115 ｜Val 116~125 ｜ Test 126~130
+使用scale, fliplr, flipud, rotation
+Anchor使用(8, 16, 32, 64, 128)
+
+dice = 0.450529523571362
+
 # version 6 (未來放前後三張slice) [2, 2, 2]  ->  [1, 2, 3]
 
 
