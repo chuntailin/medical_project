@@ -105,8 +105,57 @@ Anchor使用(8, 16, 32, 64, 128)
 
 dice = 0.5459720829205902
 
-# version 6 (未來放前後三張slice) [2, 2, 2]  ->  [1, 2, 3]
+# version 12
+使用前後三張slice作為一組training input
+新的training dataset (liver mask crop)
+Configure在train_medical中有記錄
+Train 0~115 ｜Val 116~125 ｜ Test 126~130
+使用scale, fliplr, flipud, rotation
+Anchor使用(8, 16, 32, 64, 128)
+Step_Per_Epoch = 500 (原為50)
+Validation_Steps = 100 (原為50)
+Image Dimension = 256x256
+Train_ROI_Per_Image = 80 (原為32)
+Detection_Min_Confidence = 0.5 (原為0.01)
+RPN_Train_Anchors_Per_Image = 256 (原為512)
 
+dice = 0.5586750152456664
+
+# version 13
+使用前後三張slice作為一組training input
+新的training dataset (liver mask crop)
+Configure在train_medical中有記錄
+Train 0~115 ｜Val 116~125 ｜ Test 126~130
+使用scale, fliplr, flipud, rotation
+Anchor使用(8, 16, 32, 64, 128)
+Step_Per_Epoch = 500 (原為50)
+Validation_Steps = 100 (原為50)
+Image Dimension = 256x256
+Train_ROI_Per_Image = 80 (原為32)
+Detection_Min_Confidence = 0.5 (原為0.01)
+RPN_Train_Anchors_Per_Image = 256 (原為512)
+RPN_NMS_Threshold = 0.8 (原為0.7)
+Max_GT_Instance = 20 (原為50)
+
+dice = 0.5656402679338933
+
+# version 14
+使用前後三張slice作為一組training input
+新的training dataset (liver mask crop)
+Configure在train_medical中有記錄
+Train 0~115 ｜Val 116~125 ｜ Test 126~130
+使用scale, fliplr, flipud, rotation
+Anchor使用(8, 16, 32, 64, 128)
+Step_Per_Epoch = 500 (原為50)
+Validation_Steps = 100 (原為50)
+Image Dimension = 256x256
+Train_ROI_Per_Image = 80 (原為32)
+Detection_Min_Confidence = 0.5 (原為0.01)
+RPN_Train_Anchors_Per_Image = 256 (原為512)
+RPN_NMS_Threshold = 0.8 (原為0.7)
+Max_GT_Instance = 10 (原為50)
+
+dice = 0.5656131019198679
 
 ------------ tumor --------------
 ------------HU -150~250--------------
