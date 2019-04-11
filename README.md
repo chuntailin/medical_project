@@ -158,8 +158,10 @@ Max_GT_Instance = 10 (原為50)
 dice = 0.5656131019198679
 
 # version 15 (use weights of version 14 as initial weights)
+dice = 0.0.5444565094221852
 
 # version 16 (user resnet101 and training on AsGPU)
+dice = 0.569390024508367
 
 ------------ tumor --------------
 ------------HU -150~250--------------
