@@ -236,4 +236,36 @@ dice = 0.5039709064599046
 
 # version 5 (未來放前後三張slice) [2, 2, 2]  ->  [1, 2, 3]
 
+
+
+------- Weighted Adjustment--------
+#Plan A
+Model 找到但不是 Ground Truth -> FN
+Model 沒找到但是 Ground Truth -> FP
+1 < FN < FP (better)
+
+FN weighted = (FN + FP) / FP, FP Weighted = (FN + FP) / FN 
+dice = 0.63 (10 iteration, 沒調整 abc 權重)
+
+FN weighted = (FN + FP) / FN, FP Weighted = (FN + FP) / FP 
+dice = 0.61 (10 iteration, 沒調整 abc 權重)
+
+#Plan B
+逐步調整 Segmentation (c) 的權重，看 dice 是否有上升的趨勢
+
+c = 0.1, a b = 0.45  Dice =      0.523         0.552
+c = 0.2, a b = 0.40  Dice =      0.527         0.543
+c = 0.3, a b = 0.35  Dice =      0.568         0.592
+c = 0.4, a b = 0.30  Dice =      0.581         0.613
+c = 0.5, a b = 0.25  Dice =      0.592         0.629
+c = 0.6, a b = 0.20  Dice =      0.624         0.654
+c = 0.7, a b = 0.15  Dice =      0.584         0.631
+c = 0.8, a b = 0.10  Dice =      0.550         0.621
+c = 0.9, a b = 0.05  Dice =      0.553         0.602
+
+                             不考慮 FN, FP   考慮 FN, FP
+                                Weighted      Weighted
+                                           (10 Iteration)
+
+
 ```
