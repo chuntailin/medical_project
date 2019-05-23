@@ -240,9 +240,9 @@ dice = 0.5039709064599046
 
 ------- Weighted Adjustment--------
 #Plan A
-Model 找到但不是 Ground Truth -> FN
-Model 沒找到但是 Ground Truth -> FP
-1 < FN < FP (better)
+Model 找到但不是 Ground Truth -> FP
+Model 沒找到但是 Ground Truth -> FN
+1 < FP < FN (better)
 
 FN weighted = (FN + FP) / FP, FP Weighted = (FN + FP) / FN 
 dice = 0.63 (10 iteration, 沒調整 abc 權重)
