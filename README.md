@@ -258,7 +258,7 @@ c = 0.2, a b = 0.40  Dice =      0.527         0.543
 c = 0.3, a b = 0.35  Dice =      0.568         0.592
 c = 0.4, a b = 0.30  Dice =      0.581         0.613
 c = 0.5, a b = 0.25  Dice =      0.592         0.629
-c = 0.6, a b = 0.20  Dice =      0.624         0.654
+c = 0.6, a b = 0.20  Dice =      0.624         0.663
 c = 0.7, a b = 0.15  Dice =      0.584         0.631
 c = 0.8, a b = 0.10  Dice =      0.550         0.621
 c = 0.9, a b = 0.05  Dice =      0.553         0.602
@@ -266,6 +266,52 @@ c = 0.9, a b = 0.05  Dice =      0.553         0.602
                              不考慮 FN, FP   考慮 FN, FP
                                 Weighted      Weighted
                                            (10 Iteration)
+
+#Plan C
+Loss Function 從 Dice 換回 Cross Entropy
+
+                                 Dice       Cross Entropy
+c = 0.1, a b = 0.45  Dice =      0.523         0.541
+c = 0.2, a b = 0.40  Dice =      0.527         0.532
+c = 0.3, a b = 0.35  Dice =      0.568         0.545
+c = 0.4, a b = 0.30  Dice =      0.581         0.575
+c = 0.5, a b = 0.25  Dice =      0.592         0.606
+c = 0.6, a b = 0.20  Dice =      0.624         0.623
+c = 0.7, a b = 0.15  Dice =      0.584         0.601
+c = 0.8, a b = 0.10  Dice =      0.550         0.581
+c = 0.9, a b = 0.05  Dice =      0.553         0.542
+
+#Plan D
+使用調和級數來作為 Penalty (1 + 1/2 + 1/3 + ...)
+a b c = 1, Dice = 0.62
+
+                             Cross Entropy 
+                               (Penalty)
+c = 0.1, a b = 0.45  Dice =      0.554  
+c = 0.2, a b = 0.40  Dice =      0.548  
+c = 0.3, a b = 0.35  Dice =      0.587  
+c = 0.4, a b = 0.30  Dice =      0.621  
+c = 0.5, a b = 0.25  Dice =      0.645  
+c = 0.6, a b = 0.20  Dice =      0.663  
+c = 0.7, a b = 0.15  Dice =      0.675 
+c = 0.8, a b = 0.10  Dice =      0.631  
+c = 0.9, a b = 0.05  Dice =      0.581
+
+#Plan E
+Transfer Learning (只訓練後面幾個 Layer)
+                                              
+                                Transfer      Transfer
+                                Learning      Learning
+                                             (Penalty, Plan D)
+c = 0.1, a b = 0.45  Dice =      0.581         0.572
+c = 0.2, a b = 0.40  Dice =      0.596         0.589
+c = 0.3, a b = 0.35  Dice =      0.643         0.621
+c = 0.4, a b = 0.30  Dice =      0.631         0.654
+c = 0.5, a b = 0.25  Dice =      0.672         0.690
+c = 0.6, a b = 0.20  Dice =      0.714         0.723
+c = 0.7, a b = 0.15  Dice =      0.663         0.651
+c = 0.8, a b = 0.10  Dice =      0.642         0.661
+c = 0.9, a b = 0.05  Dice =      0.592         0.572
 
 
 ```
