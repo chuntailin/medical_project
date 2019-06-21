@@ -314,4 +314,53 @@ c = 0.8, a b = 0.10  Dice =      0.642         0.661
 c = 0.9, a b = 0.05  Dice =      0.592         0.572
 
 
+#Image Augmentation (Liver)
+
+Origin            Dice = 0.908
+Gaussian Blur     Dice = 0.872
+Invert            Dice = 0.884 
+Affine            Dice = 0.886
+Flip              Dice = 0.921
+Rotate            Dice = 0.918
+Scale             Dice = 0.914
+
+#Image Augmentation (Tumor)
+
+Origin            Dice = 0.553
+Gaussian Blur     Dice = 0.525
+Invert            Dice = 0.528 
+Affine            Dice = 0.542
+Flip              Dice = 0.577
+Rotate            Dice = 0.568
+Scale             Dice = 0.574
+
+#Training Data Balance (Liver)
+
+Unbalance    Dice = 0.908
+Balance      Dice = 0.917
+
+#Training Data Balance (Tumor)
+
+Unbalance    Dice = 0.553
+Balance      Dice = 0578
+
+#Multi-class classification
+
+Two classes - liver    Dice = 0.876
+Two classes - tumor    Dice = 0.512
+One class - liver      Dice = 0.908
+One class - tumor      Dice = 0.553
+
+#Region Proposal Anchor Size
+
+Liver with big size      Dice = 0.941
+Liver with small size    Dice = 0.908
+Tumor with big size      Dice = 0.553
+Tumor with small size    Dice = 0.586
+
+#Liver Mask
+
+Unmasked    Dice = 0.553
+Masked      Dice = 0.582
+
 ```
